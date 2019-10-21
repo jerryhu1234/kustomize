@@ -1,9 +1,14 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namePrefix: prod-
+#namespace: prod
 bases:
 - ../../../base
 images:
 - name: nginx
   #newName: foo/bar1
   newTag: "1.15"
+replicas:
+- name: sl-demo-app
+  count: 1
+  
