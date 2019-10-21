@@ -1,0 +1,10 @@
+namespace: default
+commonLabels:
+  app: nignx
+resources:
+- deployment.yaml
+- service.yaml
+configMapGenerator:
+- name: nginx-map
+  files:
+  - env.startup.txt
