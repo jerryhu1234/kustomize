@@ -4,8 +4,6 @@ namePrefix: stg-
 namespace: stage
 bases:
 - ../../base
-resources:
-- service-hl.yaml
 images:
 - name: nginx
   #newName: foo/bar1
