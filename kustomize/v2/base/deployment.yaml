@@ -13,8 +13,8 @@ spec:
      spec:
        containers:
          - name: app
-           image: foo/bar:latest
+           image: nginx
            ports:
            - name: http
-             containerPort: 8080
+             containerPort: 80
              protocol: TCP
