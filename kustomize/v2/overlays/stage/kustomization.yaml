@@ -7,7 +7,7 @@ bases:
 resources:
 - service-hl.yaml
 images:
-- name: foo/bar
+- name: nginx
   #newName: foo/bar1
   newTag: "1.15"
 patchesStrategicMerge:
