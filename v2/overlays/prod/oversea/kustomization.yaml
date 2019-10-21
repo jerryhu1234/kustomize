@@ -15,5 +15,6 @@ configMapGenerator:
 - files:
   - ./files/otter.properties
   name: cm-demo-app
+  behavior: replace   #
   #generators:
   #- kustomize_secrets.yaml
