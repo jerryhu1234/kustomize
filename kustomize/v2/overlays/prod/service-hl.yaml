@@ -8,5 +8,6 @@ spec:
   ports:
   - name: http
     port: 9080
+    targetPort: 80
   selector:
     app: sl-demo-app

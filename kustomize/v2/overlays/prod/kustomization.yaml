@@ -16,7 +16,7 @@ secretGenerator:
 - literals:
   - db-password=123456
   name: sl-demo-app
-  #type: Opaque
+  type: Opaque
 configMapGenerator:
 - files:
   - ./files/otter.properties
