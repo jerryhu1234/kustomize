@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sl-demo-app
+spec:
+  revisionHistoryLimit: 5
+  progressDeadlineSeconds: 300
+  selector:
+     matchLabels:
+       app: sl-demo-app
+  template:
+     metadata:
+       labels:
+         app: sl-demo-app
+     spec:
+       containers:
+         - name: app
+           image: nginx
+           ports:
+           - name: http
+             containerPort: 80
+             protocol: TCP
+           livenessProbe:
+             failureThreshold: 3
+             httpGet:
+               path: /
+               port: 80
+               scheme: HTTP
+             periodSeconds: 10
+             successThreshold: 1
+             timeoutSeconds: 1
+             
