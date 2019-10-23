@@ -4,5 +4,7 @@ kind: Kustomization
 #   region: "domestic"
 commonLabels:
   region: "domestic"
+  env: production
+  project: livechat
 namePrefix: prod-
 #namespace: prod

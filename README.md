@@ -1,3 +1,5 @@
-kustomize
 argocd gitops for kubernetes！
-contiunes deployment.
+
+1、multi enviroment deployment;
+
+2、multi clusters deployment;

@@ -5,10 +5,9 @@ namespace: stage
 bases:
 - ../base
 - ../../../base/servicea
-images:
-- name: nginx
-  #newName: foo/bar1
-  newTag: "1.15"
+replicas:
+- name: sl-demo-app
+  count: 1
 patchesStrategicMerge:
 - patch-deployment.yaml
 - replica-and-rollout-strategy.yaml

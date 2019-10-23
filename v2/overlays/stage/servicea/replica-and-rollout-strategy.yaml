@@ -3,9 +3,10 @@ kind: Deployment
 metadata:
  name: sl-demo-app
 spec:
-  replicas: 2
+#  replicas: 2
   strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
+    # rollingUpdate:
+    #   maxSurge: 1
+    #   maxUnavailable: 1
+    # type: RollingUpdate
+    type: Recreate

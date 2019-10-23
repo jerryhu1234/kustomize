@@ -4,5 +4,6 @@ kind: Kustomization
 #   region: "domestic"
 commonLabels:
   region: "oversea"
+  env: production
 namePrefix: prod-
 #namespace: prod

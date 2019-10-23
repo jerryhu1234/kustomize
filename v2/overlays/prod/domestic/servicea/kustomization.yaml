@@ -3,6 +3,9 @@ kind: Kustomization
 bases:
 - ../base
 - ../../../../base/servicea
+replicas:
+- name: sl-demo-app
+  count: 1
 patchesStrategicMerge:
 - patch-deployment.yaml
 - replica-and-rollout-strategy.yaml
