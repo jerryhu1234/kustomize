@@ -11,14 +11,12 @@ patchesStrategicMerge:
 - replica-and-rollout-strategy.yaml
 - database-secret.yaml
 secretGenerator:
-
 - literals:
   - db-password=123456
   - db-username=root
   name: sl-demo-app
   type: Opaque
-- name: env_file_secret
-  behavior: create
+- name: env-file-secret
   envs:
   - ./files/env.txt
   type: Opaque
