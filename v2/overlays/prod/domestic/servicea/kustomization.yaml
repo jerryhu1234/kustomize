@@ -11,10 +11,25 @@ patchesStrategicMerge:
 - replica-and-rollout-strategy.yaml
 - database-secret.yaml
 secretGenerator:
+
 - literals:
   - db-password=123456
+  - db-username=root
   name: sl-demo-app
   type: Opaque
+- name: env_file_secret
+  behavior: create
+  envs:
+  - ./files/env.txt
+  type: Opaque
+# - name: app-tls-namespaced
+#   # you can define a namespace to generate
+#   # a secret in, defaults to: "default"
+#   namespace: apps
+#   files:
+#   - tls.crt=catsecret/tls.cert
+#   - tls.key=secret/tls.key
+#   type: "kubernetes.io/tls"  
 configMapGenerator:
 - files:
   - ./files/otter.properties
