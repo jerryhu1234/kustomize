@@ -14,7 +14,7 @@ spec:
          app: sl-demo-app
      spec:
        containers:
-         - name: app
+         - name: nginx-app
            image: nginx
            ports:
            - name: http
