@@ -16,10 +16,10 @@ secretGenerator:
   - db-username=root
   name: sl-demo-app
   type: Opaque
-- name: env-file-secret
-  envs:
-  - ./files/env.txt
-  type: Opaque
+  #- name: env-file-secret
+  #  envs:
+  #- ./files/env.txt
+  #type: Opaque
 # - name: app-tls-namespaced
 #   # you can define a namespace to generate
 #   # a secret in, defaults to: "default"
@@ -33,5 +33,5 @@ configMapGenerator:
   - ./files/otter.properties
   name: cm-demo-app
   behavior: create
-  #generators:
-  #- kustomize_secrets.yaml
+generators:
+- config-sops-generator.yaml
