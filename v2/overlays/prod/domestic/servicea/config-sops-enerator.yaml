@@ -1,0 +1,8 @@
+apiVersion: goabout.com/v1beta1
+kind: SopsSecretGenerator
+metadata:
+  name: servcea-cm
+behavior: create
+disableNameSuffixHash: true
+files:
+  - files/env.txt
