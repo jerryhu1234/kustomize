@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/component: repo-server
+    app.kubernetes.io/name: argocd-repo-server
+    app.kubernetes.io/part-of: argocd
+  name: argocd-repo-server
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: argocd-repo-server
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: argocd-repo-server
+    spec:
+      volumes:
+        - configMap:
+            name: private-keys
+          name: private-keys
+      containers:
+        - name:  argocd-repo-server
+          image: registry.cn-hongkong.aliyuncs.com/jerry_hu123/argocd-repo-server:v1.1
+          imagePullPolicy: Always
+          env:
+            - name: SOPS_PGP_FP
+              value: F34F5E6A6AFD80C028B29F1C215009BE9E75DDA4
+          lifecycle:
+            postStart:
+              exec:
+                command:
+                  - gpg
+                  - --import
+                  - /app/config/keys/private-key.txt
+          volumeMounts:
+            - mountPath: /app/config/keys
+              name: private-keys
