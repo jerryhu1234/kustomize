@@ -10,5 +10,3 @@ spec:
        env:
        - name: CUSTOM_ENV_VARIABLE
          value: helloworld
-       - name: SOPS_PGP_FP
-         value: 
