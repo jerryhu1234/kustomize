@@ -1,19 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app.kubernetes.io/component: repo-server
-    app.kubernetes.io/name: argocd-repo-server
-    app.kubernetes.io/part-of: argocd
   name: argocd-repo-server
 spec:
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: argocd-repo-server
   template:
-    metadata:
-      labels:
-        app.kubernetes.io/name: argocd-repo-server
     spec:
       volumes:
         - configMap:
